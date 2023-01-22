@@ -1,0 +1,8 @@
+com\mycompany\s2_mvc\Models\Estudiante.class
+com\mycompany\s2_mvc\View\View.class
+com\mycompany\s2_mvc\Controller\EstudianteService.class
+com\mycompany\s2_mvc\Database\ConnectionOracleDB.class
+com\mycompany\s2_mvc\Controller\ElementoService.class
+com\mycompany\s2_mvc\Database\ConnectionSQLServerDB.class
+com\mycompany\s2_mvc\Models\Elemento.class
+com\mycompany\s2_mvc\S2_MVC.class
