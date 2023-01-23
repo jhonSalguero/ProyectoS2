@@ -66,6 +66,5 @@ public class View {
     public static void main(String[] args) throws SQLException {
         View v = new View();
         v.app();
-        System.out.println("hola");
     }
 }
