@@ -10,10 +10,6 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-/**
- *
- * @author david
- */
 public class ElementoServiceSQLServer {
 
     private ConnectionSQLServerDB con;
@@ -24,5 +20,15 @@ public class ElementoServiceSQLServer {
 
     public ElementoServiceSQLServer() {
         con = new ConnectionSQLServerDB();
+    }
+    
+    public float promedioPrecioElemento(int codigo)throws SQLException {       
+        st = con.con_ss.createStatement();
+        cs = con.con_ss.prepareCall("{? = call precio_promedio(?)}");
+        cs.registerOutParameter(1, oracle.jdbc.OracleTypes.NUMERIC);
+        cs.setInt(2, codigo);
+        cs.execute();
+        float resultado = cs.getFloat(1);
+        return resultado;
     }
 }

@@ -4,8 +4,8 @@
  */
 package com.mycompany.s2_mvc.View;
 
-import com.mycompany.s2_mvc.Controller.ElementoServiceOracle;
-import com.mycompany.s2_mvc.Controller.EstudianteServiceOracle;
+import com.mycompany.s2_mvc.Controller.*;
+
 import java.sql.SQLException;
 import java.util.Scanner;
 
@@ -25,7 +25,7 @@ public class View {
                     + "1: Promedio del estudiante (Funcion Oracle).\n"
                     + "2: Promedio precio elemento (Funcion Oracle).\n"
                     + "3: Promedio del estudiante (Funcion SQL Server).\n"
-                    + "4: .\n"
+                    + "4: Promedio precio elemento (Funcion SQL Server).\n"
                     + "5: Salir.\n");
             opcion = lectura.nextInt();
 
@@ -42,11 +42,17 @@ public class View {
                 double prom = elem.promedioPrecioElemento(codigo);
                 System.out.println("El promedio del precio del elemento es: " + prom);
             } else if (opcion == 3){
-                EstudianteServiceOracle eo = new EstudianteServiceOracle();
+                EstudianteServiceSQLServer eo = new EstudianteServiceSQLServer();
                 System.out.println("Ingresa El código del estudiante");
                 int codigo = lectura.nextInt();
                 double prom = eo.promedioEstudiante(codigo);
                 System.out.println("El promedio del estudiante es: " + prom);
+           }  else if (opcion == 4){
+                ElementoServiceSQLServer elem= new ElementoServiceSQLServer();
+                System.out.println("Ingresa el código del elemento");
+                int codigo = lectura.nextInt();
+                double prom = elem.promedioPrecioElemento(codigo);
+                System.out.println("El promedio del precio del elemento es: " + prom);
            }
         }
     }
