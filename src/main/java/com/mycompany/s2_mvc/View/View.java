@@ -19,14 +19,16 @@ public class View {
         Scanner lectura = new Scanner(System.in);
 
         int opcion = 0;
-        while (opcion != 5) {
+        while (opcion != 7) {
 
             System.out.println("Ingresa un número del 1 al 5:\n"
                     + "1: Promedio del estudiante (Funcion Oracle).\n"
                     + "2: Promedio precio elemento (Funcion Oracle).\n"
                     + "3: Promedio del estudiante (Funcion SQL Server).\n"
                     + "4: Promedio precio elemento (Funcion SQL Server).\n"
-                    + "5: Salir.\n");
+                    + "5: Actualizar Correo (Procedimiento Oracle).\n"
+                    + "6: Actualizar Correo (Procedimieto SQL Server).\n"
+                    + "7: Salir.\n");
             opcion = lectura.nextInt();
 
             if (opcion == 1) {
@@ -48,11 +50,15 @@ public class View {
                 double prom = eo.promedioEstudiante(codigo);
                 System.out.println("El promedio del estudiante es: " + prom);
            }  else if (opcion == 4){
-                ElementoServiceSQLServer elem= new ElementoServiceSQLServer();
+                ElementoServiceSQLServer elem = new ElementoServiceSQLServer();
                 System.out.println("Ingresa el código del elemento");
                 int codigo = lectura.nextInt();
                 double prom = elem.promedioPrecioElemento(codigo);
                 System.out.println("El promedio del precio del elemento es: " + prom);
+           }  else if (opcion == 5){
+                EstudianteServiceOracle elem = new EstudianteServiceOracle();
+                elem.actualizarCorreo();
+                System.out.println("Actualizacion realizada... ");
            }
         }
     }
