@@ -11,7 +11,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author david
+ * @author JHON
  */
 public class View {
 
@@ -43,23 +43,23 @@ public class View {
                 int codigo = lectura.nextInt();
                 double prom = elem.promedioPrecioElemento(codigo);
                 System.out.println("El promedio del precio del elemento es: " + prom);
-            } else if (opcion == 3){
+            } else if (opcion == 3) {
                 EstudianteServiceSQLServer eo = new EstudianteServiceSQLServer();
                 System.out.println("Ingresa El código del estudiante");
                 int codigo = lectura.nextInt();
                 double prom = eo.promedioEstudiante(codigo);
                 System.out.println("El promedio del estudiante es: " + prom);
-           }  else if (opcion == 4){
+            } else if (opcion == 4) {
                 ElementoServiceSQLServer elem = new ElementoServiceSQLServer();
                 System.out.println("Ingresa el código del elemento");
                 int codigo = lectura.nextInt();
                 double prom = elem.promedioPrecioElemento(codigo);
                 System.out.println("El promedio del precio del elemento es: " + prom);
-           }  else if (opcion == 5){
+            } else if (opcion == 5) {
                 EstudianteServiceOracle elem = new EstudianteServiceOracle();
                 elem.actualizarCorreo();
                 System.out.println("Actualizacion realizada... ");
-           }
+            }
         }
     }
 
