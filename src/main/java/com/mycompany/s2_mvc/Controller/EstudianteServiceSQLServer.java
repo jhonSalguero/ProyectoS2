@@ -36,4 +36,11 @@ public class EstudianteServiceSQLServer {
         float resultado = cs.getFloat(1);
         return resultado;
     }
+    
+    public void actualizarCorreo() throws SQLException {
+        st = con.con_ss.createStatement();
+        cs = con.con_ss.prepareCall("{call Actualizacion_email_est()}");
+        cs.execute();
+        con.con_ss.commit();
+    }
 }

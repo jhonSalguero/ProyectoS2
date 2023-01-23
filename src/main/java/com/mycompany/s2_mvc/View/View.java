@@ -59,6 +59,10 @@ public class View {
                 EstudianteServiceOracle elem = new EstudianteServiceOracle();
                 elem.actualizarCorreo();
                 System.out.println("Actualizacion realizada... ");
+            } else if (opcion == 6) {
+                EstudianteServiceSQLServer elem = new EstudianteServiceSQLServer();
+                elem.actualizarCorreo();
+                System.out.println("Actualizacion realizada... ");
             }
         }
     }
