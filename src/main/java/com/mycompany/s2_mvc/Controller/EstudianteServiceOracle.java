@@ -12,7 +12,7 @@ import java.sql.Statement;
 
 /**
  *
- * @author david
+ * @author JHON
  */
 public class EstudianteServiceOracle {
 
