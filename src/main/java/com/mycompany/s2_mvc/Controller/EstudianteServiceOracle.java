@@ -35,7 +35,7 @@ public class EstudianteServiceOracle {
         float resultado = cs.getFloat(1);
         return resultado;
     }
-    
+
     public void actualizarCorreo() throws SQLException {
         st = con.co_ODB.createStatement();
         cs = con.co_ODB.prepareCall("{call actualizar_email()}");
