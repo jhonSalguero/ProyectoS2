@@ -6,9 +6,11 @@ package com.mycompany.s2_mvc.Controller;
 
 import com.mycompany.s2_mvc.Database.ConnectionOracleDB;
 import java.sql.CallableStatement;
+import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Types;
 
 /**
  *
@@ -16,19 +18,16 @@ import java.sql.Statement;
  */
 public class EstudianteServiceOracle {
 
-    private ConnectionOracleDB con;
-
+    private Connection aux;
+    
+    
     private Statement st = null;
     private ResultSet rs = null;
     private CallableStatement cs = null;
-
-    public EstudianteServiceOracle() {
-        con = new ConnectionOracleDB();
-    }
-
+    
     public double promedioEstudiante(int codigo) throws SQLException {
-        st = con.co_ODB.createStatement();
-        cs = con.co_ODB.prepareCall("{? = call promedio_estudiante(?)}");
+        st = ConnectionOracleDB.getConnection().createStatement();
+        cs = ConnectionOracleDB.getConnection().prepareCall("{? = call promedio_estudiante(?)}");
         cs.registerOutParameter(1, oracle.jdbc.OracleTypes.NUMERIC);
         cs.setInt(2, codigo);
         cs.execute();
@@ -37,9 +36,10 @@ public class EstudianteServiceOracle {
     }
 
     public void actualizarCorreo() throws SQLException {
-        st = con.co_ODB.createStatement();
-        cs = con.co_ODB.prepareCall("{call actualizar_email()}");
+        st = ConnectionOracleDB.getConnection().createStatement();
+        cs = ConnectionOracleDB.getConnection().prepareCall("{call actualizar_email()}");
         cs.execute();
-        con.co_ODB.commit();
+        ConnectionOracleDB.getConnection().commit();
     }
 }
+

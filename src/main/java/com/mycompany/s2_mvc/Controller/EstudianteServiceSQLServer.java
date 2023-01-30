@@ -23,13 +23,9 @@ public class EstudianteServiceSQLServer {
     private ResultSet rs = null;
     private CallableStatement cs = null;
 
-    public EstudianteServiceSQLServer() {
-        con = new ConnectionSQLServerDB();
-    }
-
     public double promedioEstudiante(int codigo) throws SQLException {
-        st = con.con_ss.createStatement();
-        cs = con.con_ss.prepareCall("{? = call promedio_estudiante(?)}");
+        st = ConnectionSQLServerDB.ConnectionSQLServerDB().createStatement();
+        cs = ConnectionSQLServerDB.ConnectionSQLServerDB().prepareCall("{? = call promedio_estudiante(?)}");
         cs.registerOutParameter(1, oracle.jdbc.OracleTypes.NUMERIC);
         cs.setInt(2, codigo);
         cs.execute();
@@ -38,9 +34,9 @@ public class EstudianteServiceSQLServer {
     }
     
     public void actualizarCorreo() throws SQLException {
-        st = con.con_ss.createStatement();
-        cs = con.con_ss.prepareCall("{call Actualizacion_email_est()}");
+        st = ConnectionSQLServerDB.ConnectionSQLServerDB().createStatement();
+        cs = ConnectionSQLServerDB.ConnectionSQLServerDB().prepareCall("{call Actualizacion_email_est()}");
         cs.execute();
-        con.con_ss.commit();
+        ConnectionSQLServerDB.ConnectionSQLServerDB().commit();
     }
 }

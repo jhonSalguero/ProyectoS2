@@ -6,28 +6,46 @@ package com.mycompany.s2_mvc.Database;
 
 /**
  *
- * @author david
+ * @author JHON
  */
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
-public class ConnectionOracleDB{
+public class ConnectionOracleDB {
 
-    ///Creamos un atributo de tipo 'Connection' y lo usamos en vez de retornarlo
-    public Connection co_ODB;
+    private static Connection conn;
 
-    public ConnectionOracleDB() {
-        try {
-            Class.forName("oracle.jdbc.driver.OracleDriver");
-            this.co_ODB = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "software2", "software2");
-            this.co_ODB.setAutoCommit(false);
-            System.out.println("Conexion exitosa");
-        } catch (SQLException | ClassNotFoundException ex) {
-            System.out.println("Error en la conexión de la base de datos");
-        }
+    private static ConnectionOracleDB oracle;
+
+    private ConnectionOracleDB() {
+        
     }
-    public void desconectar() throws SQLException {
-        this.co_ODB.close();
+
+    public static Connection getConnection() {
+        try {
+            if (conn == null) {
+                Class.forName("oracle.jdbc.driver.OracleDriver");
+                conn = DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe", "software2", "software2");
+                conn.setAutoCommit(false);
+                System.out.println("Conexion Exitosa!");
+                System.out.println(conn);
+            } else {
+                System.out.println(conn);
+                return oracle.conn;
+            }
+        } catch (ClassNotFoundException | SQLException e) {
+            JOptionPane.showMessageDialog(null, "Conexon Erronea " + e.getMessage());
+        }
+        return conn;
+    }
+
+    public void desconexion() {
+        try {
+            conn.close();
+        } catch (Exception e) {
+            System.out.println("Error al desconectar " + e.getMessage());
+        }
     }
 }

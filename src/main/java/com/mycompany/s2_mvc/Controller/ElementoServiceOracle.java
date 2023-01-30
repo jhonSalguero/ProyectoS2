@@ -16,19 +16,14 @@ import java.sql.Statement;
  */
 public class ElementoServiceOracle {
 
-    private ConnectionOracleDB con;
-
     private Statement st = null;
     private ResultSet rs = null;
     private CallableStatement cs = null;
 
-    public ElementoServiceOracle() {
-        con = new ConnectionOracleDB();
-    }
-    
-    public float promedioPrecioElemento(int codigo)throws SQLException {       
-        st = con.co_ODB.createStatement();
-        cs = con.co_ODB.prepareCall("{? = call promedio_elemento(?)}");
+
+    public float promedioPrecioElemento(int codigo) throws SQLException {
+        st = ConnectionOracleDB.getConnection().createStatement();
+        cs = ConnectionOracleDB.getConnection().prepareCall("{? = call promedio_elemento(?)}");
         cs.registerOutParameter(1, oracle.jdbc.OracleTypes.NUMERIC);
         cs.setInt(2, codigo);
         cs.execute();

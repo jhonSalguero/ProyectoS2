@@ -36,33 +36,33 @@ public class View {
                 System.out.println("Ingresa El código del estudiante");
                 int codigo = lectura.nextInt();
                 double prom = eo.promedioEstudiante(codigo);
-                System.out.println("El promedio del estudiante es: " + prom);
+                System.out.println("El promedio del estudiante es: " + prom + "\n");
             } else if (opcion == 2) {
                 ElementoServiceOracle elem = new ElementoServiceOracle();
                 System.out.println("Ingresa el código del elemento");
                 int codigo = lectura.nextInt();
                 double prom = elem.promedioPrecioElemento(codigo);
-                System.out.println("El promedio del precio del elemento es: " + prom);
+                System.out.println("El promedio del precio del elemento es: " + prom +"\n");
             } else if (opcion == 3) {
                 EstudianteServiceSQLServer eo = new EstudianteServiceSQLServer();
                 System.out.println("Ingresa El código del estudiante");
                 int codigo = lectura.nextInt();
                 double prom = eo.promedioEstudiante(codigo);
-                System.out.println("El promedio del estudiante es: " + prom);
+                System.out.println("El promedio del estudiante es: " + prom + "\n");
             } else if (opcion == 4) {
                 ElementoServiceSQLServer elem = new ElementoServiceSQLServer();
                 System.out.println("Ingresa el código del elemento");
                 int codigo = lectura.nextInt();
                 double prom = elem.promedioPrecioElemento(codigo);
-                System.out.println("El promedio del precio del elemento es: " + prom);
+                System.out.println("El promedio del precio del elemento es: " + prom + "\n");
             } else if (opcion == 5) {
                 EstudianteServiceOracle elem = new EstudianteServiceOracle();
                 elem.actualizarCorreo();
-                System.out.println("Actualizacion realizada... ");
+                System.out.println("Actualizacion realizada... \n");
             } else if (opcion == 6) {
                 EstudianteServiceSQLServer elem = new EstudianteServiceSQLServer();
                 elem.actualizarCorreo();
-                System.out.println("Actualizacion realizada... ");
+                System.out.println("Actualizacion realizada... \n");
             }
         }
     }

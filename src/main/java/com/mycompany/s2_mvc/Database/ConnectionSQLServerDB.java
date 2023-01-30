@@ -7,28 +7,40 @@ package com.mycompany.s2_mvc.Database;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 public class ConnectionSQLServerDB {
- public Connection con_ss;
- 
- public  ConnectionSQLServerDB() {
-        String conexionUrl = "jdbc:sqlserver://localhost:1433;"
-                + "database=software2;"
-                + "user=sa;"
-                + "password=root;"
-                + "encrypt=true;"
-                + "trustServerCertificate=true;"
-                + "loginTimeout=30;";
+
+    private static Connection con_ss;
+
+    private ConnectionSQLServerDB() {
+
+    }
+
+    public static Connection ConnectionSQLServerDB() {
+
         try {
-           con_ss = DriverManager.getConnection(conexionUrl);
-            
-            if (con_ss != null) {
+
+            if (con_ss == null) {
+                String conexionUrl = "jdbc:sqlserver://localhost:1433;"
+                        + "database=software2;"
+                        + "user=sa;"
+                        + "password=root;"
+                        + "encrypt=true;"
+                        + "trustServerCertificate=true;"
+                        + "loginTimeout=30;";
+
+                con_ss = DriverManager.getConnection(conexionUrl);
+
                 System.out.println("Conexion Exitosa!");
+                System.out.println(con_ss);
             } else {
-                System.out.println("Error en la conexión de la base de datos");
-            }         
+                System.out.println(con_ss);
+                return con_ss;
+            }
         } catch (SQLException ex) {
-            System.out.println(ex.toString());
+            JOptionPane.showMessageDialog(null, "Conexon Erronea " + ex.getMessage());
         }
+        return con_ss;
     }
 }
