@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.s2_mvc.Models;
+package com.mycompany.s2_mvc.DAO;
 
 import java.sql.Date;
 
@@ -10,7 +10,7 @@ import java.sql.Date;
  *
  * @author david
  */
-public class Estudiante {
+public class EstudianteDAO {
 
     private int codigo;
     private String nombres;

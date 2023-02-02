@@ -15,6 +15,12 @@ import java.util.Scanner;
  */
 public class View {
 
+    private static EstudianteControllerOracle estudiante_oracle = EstudianteControllerOracle.getInstance();
+    private static ElementoControllerOracle elemento_oracle = ElementoControllerOracle.getInstance();
+
+    private static EstudianteControllerSQLServer estudiante_sqlserver = EstudianteControllerSQLServer.getInstance();
+    private static ElementoControllerSQLServer elemento_sqlserver = ElementoControllerSQLServer.getInstance();
+
     public void app() throws SQLException {
         Scanner lectura = new Scanner(System.in);
 
@@ -32,36 +38,30 @@ public class View {
             opcion = lectura.nextInt();
 
             if (opcion == 1) {
-                EstudianteServiceOracle eo = new EstudianteServiceOracle();
                 System.out.println("Ingresa El código del estudiante");
                 int codigo = lectura.nextInt();
-                double prom = eo.promedioEstudiante(codigo);
+                double prom = estudiante_oracle.promedioEstudiante(codigo);
                 System.out.println("El promedio del estudiante es: " + prom + "\n");
             } else if (opcion == 2) {
-                ElementoServiceOracle elem = new ElementoServiceOracle();
                 System.out.println("Ingresa el código del elemento");
                 int codigo = lectura.nextInt();
-                double prom = elem.promedioPrecioElemento(codigo);
-                System.out.println("El promedio del precio del elemento es: " + prom +"\n");
+                double prom = elemento_oracle.promedioPrecioElemento(codigo);
+                System.out.println("El promedio del precio del elemento es: " + prom + "\n");
             } else if (opcion == 3) {
-                EstudianteServiceSQLServer eo = new EstudianteServiceSQLServer();
                 System.out.println("Ingresa El código del estudiante");
                 int codigo = lectura.nextInt();
-                double prom = eo.promedioEstudiante(codigo);
+                double prom = estudiante_sqlserver.promedioEstudiante(codigo);
                 System.out.println("El promedio del estudiante es: " + prom + "\n");
             } else if (opcion == 4) {
-                ElementoServiceSQLServer elem = new ElementoServiceSQLServer();
                 System.out.println("Ingresa el código del elemento");
                 int codigo = lectura.nextInt();
-                double prom = elem.promedioPrecioElemento(codigo);
+                double prom = elemento_sqlserver.promedioPrecioElemento(codigo);
                 System.out.println("El promedio del precio del elemento es: " + prom + "\n");
             } else if (opcion == 5) {
-                EstudianteServiceOracle elem = new EstudianteServiceOracle();
-                elem.actualizarCorreo();
+                estudiante_oracle.actualizarCorreo();
                 System.out.println("Actualizacion realizada... \n");
             } else if (opcion == 6) {
-                EstudianteServiceSQLServer elem = new EstudianteServiceSQLServer();
-                elem.actualizarCorreo();
+                estudiante_sqlserver.actualizarCorreo();
                 System.out.println("Actualizacion realizada... \n");
             }
         }

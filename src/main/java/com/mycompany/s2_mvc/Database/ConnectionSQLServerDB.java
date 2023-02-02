@@ -11,16 +11,22 @@ import javax.swing.JOptionPane;
 
 public class ConnectionSQLServerDB {
 
+    private static ConnectionSQLServerDB sqlServer_con;
+
     private static Connection con_ss;
 
     private ConnectionSQLServerDB() {
-
     }
 
-    public static Connection ConnectionSQLServerDB() {
+    public static ConnectionSQLServerDB getInstance() {
+        if (sqlServer_con == null) {
+            sqlServer_con = new ConnectionSQLServerDB();
+        }
+        return sqlServer_con;
+    }
 
+    public static Connection getConnection() {
         try {
-
             if (con_ss == null) {
                 String conexionUrl = "jdbc:sqlserver://localhost:1433;"
                         + "database=software2;"

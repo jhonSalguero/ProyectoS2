@@ -73,24 +73,24 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                      <Component id="jTextField4" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField3" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="jTextField2" alignment="0" min="-2" pref="82" max="-2" attributes="0"/>
+                                      <Component id="precioS" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="precioO" alignment="0" max="32767" attributes="0"/>
+                                      <Component id="promedioS" alignment="0" min="-2" pref="82" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="102" attributes="0">
-                                          <Component id="Consultar4" min="-2" max="-2" attributes="0"/>
+                                          <Component id="consultar4" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="rta4" min="-2" pref="132" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" attributes="0">
-                                          <Component id="Consultar3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="consultar3" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Component id="rta3" min="-2" pref="132" max="-2" attributes="0"/>
                                       </Group>
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="Consultar2" min="-2" max="-2" attributes="0"/>
+                                          <Component id="consultar2" min="-2" max="-2" attributes="0"/>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Component id="rta1" alignment="0" min="-2" pref="132" max="-2" attributes="0"/>
@@ -102,8 +102,8 @@
                               <Group type="102" alignment="0" attributes="0">
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="1" attributes="0">
-                                      <Component id="Actualizar2" min="-2" max="-2" attributes="0"/>
-                                      <Component id="Actualizar1" min="-2" max="-2" attributes="0"/>
+                                      <Component id="actualizarS" min="-2" max="-2" attributes="0"/>
+                                      <Component id="actualizarO" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace min="-2" pref="14" max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
@@ -117,9 +117,9 @@
                                       <Component id="Titulo" min="-2" max="-2" attributes="0"/>
                                       <Group type="102" alignment="0" attributes="0">
                                           <EmptySpace min="-2" pref="19" max="-2" attributes="0"/>
-                                          <Component id="jTextField1" min="-2" pref="82" max="-2" attributes="0"/>
+                                          <Component id="promedioO" min="-2" pref="82" max="-2" attributes="0"/>
                                           <EmptySpace max="-2" attributes="0"/>
-                                          <Component id="Consultar1" min="-2" max="-2" attributes="0"/>
+                                          <Component id="consultar1" min="-2" max="-2" attributes="0"/>
                                       </Group>
                                   </Group>
                               </Group>
@@ -139,16 +139,16 @@
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="PEstudianteOracle" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField1" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="Consultar1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="promedioO" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="consultar1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="rta1" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel1" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="PEstudianteSQLServer" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="Consultar2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="promedioS" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="consultar2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="rta2" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -157,16 +157,16 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="PElementoOracle" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="jTextField3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="Consultar3" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="precioO" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="consultar3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="rta3" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jTextField4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="precioS" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="PElementoSQLServer" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="Consultar4" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="consultar4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="rta4" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="jLabel4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
@@ -175,13 +175,13 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="CorreoOracle" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="Actualizar1" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="actualizarO" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="rta5" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="CorreoSQLServer" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="Actualizar2" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="actualizarS" alignment="3" min="-2" max="-2" attributes="0"/>
                       <Component id="rta6" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace pref="33" max="32767" attributes="0"/>
@@ -205,23 +205,35 @@
             <Property name="text" type="java.lang.String" value="Promedio del estudiante (Funcion SQL Server)"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField1">
+        <Component class="javax.swing.JTextField" name="promedioO">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="promedioOKeyReleased"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField2">
+        <Component class="javax.swing.JTextField" name="promedioS">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="promedioSKeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="PElementoOracle">
           <Properties>
             <Property name="text" type="java.lang.String" value="Promedio precio elemento (Funcion Oracle)"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField3">
+        <Component class="javax.swing.JTextField" name="precioO">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="precioOKeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="PElementoSQLServer">
           <Properties>
             <Property name="text" type="java.lang.String" value="Promedio precio elemento (Funcion SQL Server)"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="jTextField4">
+        <Component class="javax.swing.JTextField" name="precioS">
+          <Events>
+            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="precioSKeyReleased"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JSeparator" name="Separacion">
         </Component>
@@ -237,65 +249,65 @@
             <Property name="text" type="java.lang.String" value="Actualizar Correo (Procedimieto SQL Server)"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JButton" name="Actualizar1">
+        <Component class="javax.swing.JButton" name="actualizarO">
           <Properties>
             <Property name="text" type="java.lang.String" value="Actualizar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actualizarOActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="Actualizar2">
+        <Component class="javax.swing.JButton" name="actualizarS">
           <Properties>
             <Property name="text" type="java.lang.String" value="Actualizar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="actualizarSActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="Consultar1">
+        <Component class="javax.swing.JButton" name="consultar1">
           <Properties>
             <Property name="text" type="java.lang.String" value="Consultar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consultar1ActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="Consultar2">
+        <Component class="javax.swing.JButton" name="consultar2">
           <Properties>
             <Property name="text" type="java.lang.String" value="Consultar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consultar2ActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="Consultar3">
+        <Component class="javax.swing.JButton" name="consultar3">
           <Properties>
             <Property name="text" type="java.lang.String" value="Consultar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consultar3ActionPerformed"/>
+          </Events>
         </Component>
-        <Component class="javax.swing.JButton" name="Consultar4">
+        <Component class="javax.swing.JButton" name="consultar4">
           <Properties>
             <Property name="text" type="java.lang.String" value="Consultar"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="consultar4ActionPerformed"/>
+          </Events>
         </Component>
         <Component class="javax.swing.JLabel" name="rta1">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel1"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="rta2">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel2"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="rta3">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel3"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="rta4">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel4"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="rta5">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel5"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="rta6">
-          <Properties>
-            <Property name="text" type="java.lang.String" value="jLabel6"/>
-          </Properties>
         </Component>
         <Component class="javax.swing.JLabel" name="jLabel1">
           <Properties>

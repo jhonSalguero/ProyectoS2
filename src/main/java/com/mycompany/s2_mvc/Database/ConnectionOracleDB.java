@@ -17,10 +17,17 @@ public class ConnectionOracleDB {
 
     private static Connection conn;
 
-    private static ConnectionOracleDB oracle;
+    private static ConnectionOracleDB o_con;
 
     private ConnectionOracleDB() {
-        
+
+    }
+
+    public static ConnectionOracleDB getInstance() {
+        if (o_con == null) {
+            o_con = new ConnectionOracleDB();
+        }
+        return o_con;
     }
 
     public static Connection getConnection() {
@@ -33,7 +40,7 @@ public class ConnectionOracleDB {
                 System.out.println(conn);
             } else {
                 System.out.println(conn);
-                return oracle.conn;
+                return o_con.conn;
             }
         } catch (ClassNotFoundException | SQLException e) {
             JOptionPane.showMessageDialog(null, "Conexon Erronea " + e.getMessage());
