@@ -4,10 +4,9 @@
  */
 package com.mycompany.s2_mvc.View;
 
-import com.mycompany.s2_mvc.Controller.ElementoControllerOracle;
-import com.mycompany.s2_mvc.Controller.ElementoControllerSQLServer;
-import com.mycompany.s2_mvc.Controller.EstudianteControllerOracle;
-import com.mycompany.s2_mvc.Controller.EstudianteControllerSQLServer;
+import com.mycompany.s2_mvc.Controller.ElementoController;
+import com.mycompany.s2_mvc.Controller.EstudianteController;
+import com.mycompany.s2_mvc.DTO.EstudianteDTO;
 import java.awt.event.KeyEvent;
 
 /**
@@ -16,11 +15,8 @@ import java.awt.event.KeyEvent;
  */
 public class InterfazGrafica extends javax.swing.JFrame {
 
-    private static EstudianteControllerOracle estudiante_oracle = EstudianteControllerOracle.getInstance();
-    private static ElementoControllerOracle elemento_oracle = ElementoControllerOracle.getInstance();
-
-    private static EstudianteControllerSQLServer estudiante_sqlserver = EstudianteControllerSQLServer.getInstance();
-    private static ElementoControllerSQLServer elemento_sqlserver = ElementoControllerSQLServer.getInstance();
+    private static EstudianteController estudiante = EstudianteController.getInstance();
+    private static ElementoController elemento = ElementoController.getInstance();
 
     /**
      * Creates new form InterfazGrafica
@@ -64,6 +60,17 @@ public class InterfazGrafica extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
+        jSeparator2 = new javax.swing.JSeparator();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        dto1 = new javax.swing.JTextField();
+        dto2 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        consultar5 = new javax.swing.JButton();
+        consultar6 = new javax.swing.JButton();
+        rta7 = new javax.swing.JLabel();
+        rta8 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -155,16 +162,51 @@ public class InterfazGrafica extends javax.swing.JFrame {
 
         jLabel4.setText("ID:");
 
+        jLabel5.setText("Promedio del estudiante DTO (Funcion Oracle)");
+
+        jLabel6.setText("Promedio del estudiante DTO (Funcion SQL Server)");
+
+        dto1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                dto1KeyReleased(evt);
+            }
+        });
+
+        dto2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                dto2KeyReleased(evt);
+            }
+        });
+
+        jLabel7.setText("ID:");
+
+        consultar5.setText("Consultar");
+        consultar5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultar5ActionPerformed(evt);
+            }
+        });
+
+        consultar6.setText("Consultar");
+        consultar6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                consultar6ActionPerformed(evt);
+            }
+        });
+
+        jLabel8.setText("ID:");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jSeparator1)
-                    .addComponent(Separacion, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jSeparator2, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jSeparator1, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(Separacion)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(PEstudianteOracle)
                             .addComponent(PEstudianteSQLServer)
@@ -188,9 +230,9 @@ public class InterfazGrafica extends javax.swing.JFrame {
                                         .addComponent(jLabel4)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(precioS)
                                     .addComponent(precioO)
-                                    .addComponent(promedioS, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(promedioS, javax.swing.GroupLayout.DEFAULT_SIZE, 82, Short.MAX_VALUE)
+                                    .addComponent(precioS))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -224,8 +266,29 @@ public class InterfazGrafica extends javax.swing.JFrame {
                                         .addGap(19, 19, 19)
                                         .addComponent(promedioO, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(consultar1)))))
-                        .addGap(0, 107, Short.MAX_VALUE)))
+                                        .addComponent(consultar1))))))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel5))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.TRAILING))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(dto2, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(dto1, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(consultar6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(rta8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(consultar5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(rta7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -275,7 +338,27 @@ public class InterfazGrafica extends javax.swing.JFrame {
                     .addComponent(CorreoSQLServer)
                     .addComponent(actualizarS)
                     .addComponent(rta6))
-                .addContainerGap(33, Short.MAX_VALUE))
+                .addGap(18, 18, 18)
+                .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel6))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(dto2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(consultar6)
+                        .addComponent(rta8)
+                        .addComponent(jLabel8))
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(dto1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel7)
+                            .addComponent(consultar5)
+                            .addComponent(rta7))
+                        .addGap(28, 28, 28)))
+                .addContainerGap(40, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -286,75 +369,69 @@ public class InterfazGrafica extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void consultar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar1ActionPerformed
+    private void consultar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar6ActionPerformed
         try {
-            int codigo = Integer.parseInt(promedioO.getText());
-            String rta = String.valueOf(estudiante_oracle.promedioEstudiante(codigo));
-            rta1.setText(rta);
+            int codigo = Integer.parseInt(dto2.getText());
+            EstudianteDTO est = estudiante.promedioEstudiante_SQLServerDTO(codigo);
+            rta8.setText(String.valueOf(est.getPromedio()));
         } catch (Exception e) {
         }
+    }//GEN-LAST:event_consultar6ActionPerformed
 
-    }//GEN-LAST:event_consultar1ActionPerformed
-
-    private void consultar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar2ActionPerformed
+    private void consultar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar5ActionPerformed
         try {
-            int codigo = Integer.parseInt(promedioS.getText());
-            String rta = String.valueOf(estudiante_sqlserver.promedioEstudiante(codigo));
-            rta2.setText(rta);
+            int codigo = Integer.parseInt(dto1.getText());
+            EstudianteDTO est = estudiante.promedioEstudiante_OracleDTO(codigo);
+            rta7.setText(String.valueOf(est.getPromedio()));
         } catch (Exception e) {
         }
-
-    }//GEN-LAST:event_consultar2ActionPerformed
-
-    private void consultar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar3ActionPerformed
-        try {
-            int codigo = Integer.parseInt(precioO.getText());
-            String rta = String.valueOf(elemento_oracle.promedioPrecioElemento(codigo));
-            rta3.setText(rta);
-        } catch (Exception e) {
-        }
-    }//GEN-LAST:event_consultar3ActionPerformed
+    }//GEN-LAST:event_consultar5ActionPerformed
 
     private void consultar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar4ActionPerformed
         try {
             int codigo = Integer.parseInt(precioS.getText());
-            String rta = String.valueOf(elemento_sqlserver.promedioPrecioElemento(codigo));
+            String rta = String.valueOf(elemento.promedioPrecioElementoSQLServer(codigo));
             rta4.setText(rta);
         } catch (Exception e) {
         }
     }//GEN-LAST:event_consultar4ActionPerformed
 
-    private void promedioOKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_promedioOKeyReleased
+    private void consultar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar3ActionPerformed
         try {
-            if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-                int codigo = Integer.parseInt(promedioO.getText());
-                String rta = String.valueOf(estudiante_oracle.promedioEstudiante(codigo));
-                rta1.setText(rta);
-            }
+            int codigo = Integer.parseInt(precioO.getText());
+            String rta = String.valueOf(elemento.promedioPrecioElementoOracle(codigo));
+            rta3.setText(rta);
         } catch (Exception e) {
         }
-    }//GEN-LAST:event_promedioOKeyReleased
+    }//GEN-LAST:event_consultar3ActionPerformed
 
-    private void actualizarOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarOActionPerformed
+    private void consultar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar2ActionPerformed
         try {
-            if (estudiante_oracle.actualizarCorreo()) {
-                rta5.setText("Actualizacion realizada...");
-            } else {
-                rta5.setText("Error al actualizar ;(");
-            }
+            int codigo = Integer.parseInt(promedioS.getText());
+            String rta = String.valueOf(estudiante.promedioEstudiante_SQLServer(codigo));
+            rta2.setText(rta);
         } catch (Exception e) {
         }
-    }//GEN-LAST:event_actualizarOActionPerformed
+    }//GEN-LAST:event_consultar2ActionPerformed
+
+    private void consultar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar1ActionPerformed
+        try {
+            int codigo = Integer.parseInt(promedioO.getText());
+            String rta = String.valueOf(estudiante.promedioEstudiante_Oracle(codigo));
+            rta1.setText(rta);
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_consultar1ActionPerformed
 
     private void actualizarSActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarSActionPerformed
         try {
-            if (estudiante_sqlserver.actualizarCorreo()) {
+            if (estudiante.actualizarCorreo_SQLServer()) {
                 rta6.setText("Actualizacion realizada...");
             } else {
                 rta5.setText("Error al actualizar ;(");
@@ -363,38 +440,82 @@ public class InterfazGrafica extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_actualizarSActionPerformed
 
-    private void promedioSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_promedioSKeyReleased
+    private void actualizarOActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_actualizarOActionPerformed
         try {
-            if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-                int codigo = Integer.parseInt(promedioS.getText());
-                String rta = String.valueOf(estudiante_sqlserver.promedioEstudiante(codigo));
-                rta2.setText(rta);
+            if (estudiante.actualizarCorreo_Oracle()) {
+                rta5.setText("Actualizacion realizada...");
+            } else {
+                rta5.setText("Error al actualizar ;(");
             }
         } catch (Exception e) {
         }
-    }//GEN-LAST:event_promedioSKeyReleased
+    }//GEN-LAST:event_actualizarOActionPerformed
+
+    private void precioSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_precioSKeyReleased
+        try {
+            if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+                int codigo = Integer.parseInt(precioS.getText());
+                String rta = String.valueOf(elemento.promedioPrecioElementoSQLServer(codigo));
+                rta4.setText(rta);
+            }
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_precioSKeyReleased
 
     private void precioOKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_precioOKeyReleased
         try {
             if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
                 int codigo = Integer.parseInt(precioO.getText());
-                String rta = String.valueOf(elemento_oracle.promedioPrecioElemento(codigo));
+                String rta = String.valueOf(elemento.promedioPrecioElementoOracle(codigo));
                 rta3.setText(rta);
             }
         } catch (Exception e) {
         }
     }//GEN-LAST:event_precioOKeyReleased
 
-    private void precioSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_precioSKeyReleased
+    private void promedioSKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_promedioSKeyReleased
         try {
             if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
-                int codigo = Integer.parseInt(precioS.getText());
-                String rta = String.valueOf(elemento_sqlserver.promedioPrecioElemento(codigo));
-                rta4.setText(rta);
+                int codigo = Integer.parseInt(promedioS.getText());
+                String rta = String.valueOf(estudiante.promedioEstudiante_SQLServer(codigo));
+                rta2.setText(rta);
             }
         } catch (Exception e) {
         }
-    }//GEN-LAST:event_precioSKeyReleased
+    }//GEN-LAST:event_promedioSKeyReleased
+
+    private void promedioOKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_promedioOKeyReleased
+        try {
+            if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+                int codigo = Integer.parseInt(promedioO.getText());
+                String rta = String.valueOf(estudiante.promedioEstudiante_Oracle(codigo));
+                rta1.setText(rta);
+            }
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_promedioOKeyReleased
+
+    private void dto1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dto1KeyReleased
+        try {
+            if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+                int codigo = Integer.parseInt(dto1.getText());
+                EstudianteDTO est = estudiante.promedioEstudiante_OracleDTO(codigo);
+                rta7.setText(String.valueOf(est.getPromedio()));
+            }
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_dto1KeyReleased
+
+    private void dto2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_dto2KeyReleased
+        try {
+            if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+                int codigo = Integer.parseInt(dto2.getText());
+                EstudianteDTO est = estudiante.promedioEstudiante_SQLServerDTO(codigo);
+                rta8.setText(String.valueOf(est.getPromedio()));
+            }
+        } catch (Exception e) {
+        }
+    }//GEN-LAST:event_dto2KeyReleased
 
     /**
      * @param args the command line arguments
@@ -446,12 +567,21 @@ public class InterfazGrafica extends javax.swing.JFrame {
     private javax.swing.JButton consultar2;
     private javax.swing.JButton consultar3;
     private javax.swing.JButton consultar4;
+    private javax.swing.JButton consultar5;
+    private javax.swing.JButton consultar6;
+    private javax.swing.JTextField dto1;
+    private javax.swing.JTextField dto2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JSeparator jSeparator2;
     private javax.swing.JTextField precioO;
     private javax.swing.JTextField precioS;
     private javax.swing.JTextField promedioO;
@@ -462,5 +592,7 @@ public class InterfazGrafica extends javax.swing.JFrame {
     private javax.swing.JLabel rta4;
     private javax.swing.JLabel rta5;
     private javax.swing.JLabel rta6;
+    private javax.swing.JLabel rta7;
+    private javax.swing.JLabel rta8;
     // End of variables declaration//GEN-END:variables
 }

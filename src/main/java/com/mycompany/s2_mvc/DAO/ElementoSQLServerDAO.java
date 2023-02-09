@@ -2,43 +2,40 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package com.mycompany.s2_mvc.Service;
+package com.mycompany.s2_mvc.DAO;
 
 import com.mycompany.s2_mvc.Database.ConnectionSQLServerDB;
+
 import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 /**
  *
  * @author david
  */
-public class ElementoServiceSQLServer {
+public class ElementoSQLServerDAO {
 
     private static ConnectionSQLServerDB con_ss = ConnectionSQLServerDB.getInstance();
     private static Connection con = con_ss.getConnection();
 
-    private Statement st = null;
-    private ResultSet rs = null;
     private CallableStatement cs = null;
 
-    private static ElementoServiceSQLServer elementoServiceSQLServer;
+    private static ElementoSQLServerDAO elementoServiceSQLServer;
 
-    private ElementoServiceSQLServer() {
+    private ElementoSQLServerDAO() {
     }
 
-    public static ElementoServiceSQLServer getInstance() {
+    public static ElementoSQLServerDAO getInstance() {
         if (elementoServiceSQLServer == null) {
-            elementoServiceSQLServer = new ElementoServiceSQLServer();
+            elementoServiceSQLServer = new ElementoSQLServerDAO();
         }
         return elementoServiceSQLServer;
     }
 
     public float promedioPrecioElemento(int codigo) throws SQLException {
 
-        st = con.createStatement();
+        con.createStatement();
         cs = con.prepareCall("{? = call precio_promedio(?)}");
         cs.registerOutParameter(1, oracle.jdbc.OracleTypes.NUMERIC);
         cs.setInt(2, codigo);
