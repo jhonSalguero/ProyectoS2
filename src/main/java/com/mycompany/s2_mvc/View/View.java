@@ -77,25 +77,18 @@ public class View {
                 System.out.println("Telefono: " + estdto.getTelefono());
                 System.out.println("Programa: " + estdto.getPrograma());
                 System.out.println("Imagen: " + estdto.getImagen());
+                
             } else if (opcion == 8) {
                 System.out.println("Ingresa el código del estudiante");
                 int codigo = lectura.nextInt();
-                EstudianteDTO estdto = est.buscarEstudiante_Oracle(codigo);
-                JFileChooser explorador = new JFileChooser();
-                int ap = explorador.showOpenDialog(explorador);
-                String ruta = null;
+                EstudianteDTO estdto = est.buscarEstudiante_Oracle(codigo);                
+                est.guardarFotoOracle(estdto);
                 
-                if (ap == JFileChooser.APPROVE_OPTION) {
-                    ruta = explorador.getSelectedFile().getAbsolutePath();
-                    File archivo = new File(ruta);
-                    estdto.setImagen(new byte[(int) archivo.length()]);
-                    byte[] img = est.guardarFotoOracle(estdto);
-                    estdto.setImagen(est.guardarFotoOracle(estdto));
-                }               
             } else if (opcion == 9) {
-                
-                
-                
+                System.out.println("Ingresa el código del estudiante");
+                int codigo = lectura.nextInt();
+                EstudianteDTO estdto = est.buscarEstudiante_Oracle(codigo);
+                est.mostrarImagenOracle(estdto);   
             }
         }
     }

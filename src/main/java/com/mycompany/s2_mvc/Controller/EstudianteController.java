@@ -62,8 +62,13 @@ public class EstudianteController {
         return est.buscarEstudiante(codigo);
     }
 
-    public byte[] guardarFotoOracle(EstudianteDTO estudiante) {
-        return est.guardarFotoOracle(estudiante);
+    public void guardarFotoOracle(EstudianteDTO estudiante) {
+        est.guardarImagenOracle(estudiante);
+    }
+    
+    public void mostrarImagenOracle(EstudianteDTO estudiante){
+        est.mostrarImagenOracle(estudiante);
+    
     }
    
 }

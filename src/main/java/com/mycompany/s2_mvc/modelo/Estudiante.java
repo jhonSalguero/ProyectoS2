@@ -88,12 +88,13 @@ public class Estudiante {
         return est;
     }
     
-    public byte[] guardarFotoOracle(EstudianteDTO estudiante){
-        byte[] img = null;
-        try {
-            img = est_odao.guardarFotoBaseOracle(estudiante);
-        } catch (Exception e) {
-        }
-        return img;
+    public void guardarImagenOracle(EstudianteDTO estudiante){
+        est_odao.guardarImagenOracle(estudiante);
+
     }
+    
+    public void mostrarImagenOracle(EstudianteDTO estudiante){
+        est_odao.mostrarImagenOracle(estudiante);
+    }
+    
 }
