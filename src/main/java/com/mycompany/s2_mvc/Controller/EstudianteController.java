@@ -57,4 +57,13 @@ public class EstudianteController {
     public EstudianteDTO promedioEstudiante_SQLServerDTO(int codigo) {
         return est.calcular_promedio_SQLServerDTO(codigo);
     }
+
+    public EstudianteDTO buscarEstudiante_Oracle(int codigo) {
+        return est.buscarEstudiante(codigo);
+    }
+
+    public byte[] guardarFotoOracle(EstudianteDTO estudiante) {
+        return est.guardarFotoOracle(estudiante);
+    }
+   
 }

@@ -23,6 +23,8 @@ public class Estudiante {
     private String apellido2;
     private String telefono;
     private String programa;
+    private byte[] imagen;
+    
 
     public double calcular_promedio_Oracle(int codigo) {
         try {
@@ -74,5 +76,24 @@ public class Estudiante {
         } else {
             return false;
         }
+    }
+    
+    public EstudianteDTO buscarEstudiante(int codigo){
+        EstudianteDTO est = new EstudianteDTO();        
+        try {
+            est = est_odao.buscarIdEstudianteOracle(codigo);
+        } catch (Exception e) {
+            est = null;
+        }
+        return est;
+    }
+    
+    public byte[] guardarFotoOracle(EstudianteDTO estudiante){
+        byte[] img = null;
+        try {
+            img = est_odao.guardarFotoBaseOracle(estudiante);
+        } catch (Exception e) {
+        }
+        return img;
     }
 }
