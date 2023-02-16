@@ -12,6 +12,13 @@ import com.mycompany.s2_mvc.DTO.EstudianteDTO;
  *
  * @author david
  */
+
+/**
+* Clase Estudiante
+* contiene metodos para calcular promedio del estudiante en oracle y sqlserver
+* @author Jhon.Salguero Wilquer.Pulido Cristian.Quintero / Unillanos
+* @version 2.0, 2023/02/15
+*/
 public class Estudiante {
 
     private EstudianteOracleDAO est_odao = EstudianteOracleDAO.getInstance();
@@ -24,7 +31,11 @@ public class Estudiante {
     private String telefono;
     private String programa;
     private byte[] imagen;
-
+    
+    /**
+     * metodo calcular_promedio_Oracle
+     * recibe el codigo del estudiante y lo envia al metodo promedioEstudiante
+     */
     public double calcular_promedio_Oracle(int codigo) {
         try {
             return est_odao.promedioEstudiante(codigo);
@@ -32,7 +43,11 @@ public class Estudiante {
             return 0;
         }
     }
-
+    
+    /**
+     * metodo calcular_promedio_OracleDTO
+     * recibe el codigo del estudiante y lo envia al metodo promedioEstudianteDTO
+     */
     public EstudianteDTO calcular_promedio_OracleDTO(int codigo) {
         EstudianteDTO est = new EstudianteDTO();
         try {
@@ -43,6 +58,10 @@ public class Estudiante {
         }
     }
 
+    /**
+     * metodo actualizar_correo_Oracle
+     * recibe el codigo del estudiante y lo envia al metodo actualizarCorreo
+     */
     public boolean actualizar_correo_Oracle() {
         if (est_odao.actualizarCorreo()) {
             return true;
@@ -50,7 +69,11 @@ public class Estudiante {
             return false;
         }
     }
-
+    
+    /**
+     * metodo calcular_promedio_SQLServer
+     * recibe el codigo del estudiante y lo envia al metodo promedioEstudiante
+     */
     public double calcular_promedio_SQLServer(int codigo) {
         try {
             return est_ssdao.promedioEstudiante(codigo);
@@ -59,6 +82,10 @@ public class Estudiante {
         }
     }
 
+    /**
+     * metodo calcular_promedio_SQLServerDTO
+     * recibe el codigo del estudiante y lo envia al metodo promedioEstudianteDTO
+     */
     public EstudianteDTO calcular_promedio_SQLServerDTO(int codigo) {
         EstudianteDTO est = new EstudianteDTO();
         try {
@@ -69,6 +96,10 @@ public class Estudiante {
         }
     }
 
+    /**
+     * metodo actualizar_correo_SQLServer
+     * recibe el codigo del estudiante y lo envia al metodo actualizarCorreo
+     */
     public boolean actualizar_correo_SQLServer() {
         if (est_ssdao.actualizarCorreo()) {
             return true;
@@ -77,6 +108,10 @@ public class Estudiante {
         }
     }
 
+    /**
+     * metodo buscarEstudiante
+     * recibe el codigo del estudiante y lo envia al metodo buscarIdEstudianteOracle
+     */
     public EstudianteDTO buscarEstudiante(int codigo) {
         EstudianteDTO est = new EstudianteDTO();
         try {
@@ -87,11 +122,19 @@ public class Estudiante {
         return est;
     }
 
+    /**
+     * metodo guardarImagenOracle
+     * recibe el codigo del estudiante y lo envia al metodo guardarImagenOracle
+     */
     public void guardarImagenOracle(EstudianteDTO estudiante) {
         est_odao.guardarImagenOracle(estudiante);
 
     }
 
+    /**
+     * metodo mostrarImagenOracle
+     * recibe el codigo del estudiante y lo envia al metodo mostrarImagenOracle
+     */
     public void mostrarImagenOracle(EstudianteDTO estudiante) {
         est_odao.mostrarImagenOracle(estudiante);
     }

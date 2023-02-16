@@ -32,7 +32,7 @@ public class ElementoSQLServerDAO {
         }
         return elementoServiceSQLServer;
     }
-
+    
     public float promedioPrecioElemento(int codigo) throws SQLException {
 
         con.createStatement();

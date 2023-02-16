@@ -16,11 +16,22 @@ import javax.swing.JFileChooser;
  *
  * @author jhon,wilquer,cristianq
  */
+
+/**
+* Clase View por consola
+* contiene un menu por consola por el cual se pueden consultar las funciones y metodos en oracle y sqlserver
+* @author Jhon.Salguero Wilquer.Pulido Cristian.Quintero / Unillanos
+* @version 2.0, 2023/02/15
+*/
 public class View {
 
     EstudianteController est = EstudianteController.getInstance();
     ElementoController elem = ElementoController.getInstance();
-
+    
+    /**
+     * metodo app()
+     * contiene el menu por consola y logica para llamar cada metodo y funcion almacenado en las bases de datos
+     */
     public void app() throws SQLException {
         Scanner lectura = new Scanner(System.in);
 

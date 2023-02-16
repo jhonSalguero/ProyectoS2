@@ -9,6 +9,12 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
+/**
+* Clase ConnectionSQLServerDB
+* permite la conexion a la base de datos SQL Server
+* @author Jhon.Salguero Wilquer.Pulido Cristian.Quintero / Unillanos
+* @version 2.0, 2023/02/15
+*/
 public class ConnectionSQLServerDB {
 
     private static ConnectionSQLServerDB sqlServer_con;
@@ -24,7 +30,10 @@ public class ConnectionSQLServerDB {
         }
         return sqlServer_con;
     }
-
+    /**
+     * metodo getConnection
+     * este metodo permite la conexion a la base de datos validando las credenciales
+     */
     public static Connection getConnection() {
         try {
             if (con_ss == null) {

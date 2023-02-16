@@ -13,6 +13,13 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
 
+
+/**
+* Clase ConnectionOracleDB
+* permite la conexion a la base de datos oracle
+* @author Jhon.Salguero Wilquer.Pulido Cristian.Quintero / Unillanos
+* @version 2.0, 2023/02/15
+*/
 public class ConnectionOracleDB {
 
     private static Connection conn;
@@ -29,7 +36,11 @@ public class ConnectionOracleDB {
         }
         return o_con;
     }
-
+    
+    /**
+     * metodo getConnection
+     * este metodo permite la conexion a la base de datos validando las credenciales
+     */
     public static Connection getConnection() {
         try {
             if (conn == null) {

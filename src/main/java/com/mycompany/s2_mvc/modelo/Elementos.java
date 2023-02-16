@@ -11,6 +11,13 @@ import com.mycompany.s2_mvc.DAO.ElementoSQLServerDAO;
  *
  * @author jhon,wilquer,cristianq
  */
+
+/**
+* Clase Elementos
+* contiene metodos para calcular promedio del elemento en oracle y sqlserver
+* @author Jhon.Salguero Wilquer.Pulido Cristian.Quintero / Unillanos
+* @version 2.0, 2023/02/15
+*/
 public class Elementos {
 
     private ElementoOracleDAO elem_odao = ElementoOracleDAO.getInstance();
@@ -33,6 +40,11 @@ public class Elementos {
     private String precio_actual;
     private String cantidad_elementos;
 
+    
+    /**
+     * metodo calcularPromedioElementoOracle
+     * recibe el codigo del estudiante y lo envia al metodo promedioPrecioElemento
+     */
     public double calcularPromedioElementoOracle(int codigo) {
         try {
             return elem_odao.promedioPrecioElemento(codigo);
@@ -40,7 +52,11 @@ public class Elementos {
             return 0;
         }
     }
-
+    
+    /**
+     * metodo calcularPromedioElementoSQLServer
+     * recibe el codigo del estudiante y lo envia al metodo promedioPrecioElemento
+     */
     public double calcularPromedioElementoSQLServer(int codigo) {
         try {
             return elem_ssdao.promedioPrecioElemento(codigo);

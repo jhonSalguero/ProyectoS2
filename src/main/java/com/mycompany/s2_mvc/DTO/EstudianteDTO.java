@@ -8,6 +8,13 @@ package com.mycompany.s2_mvc.DTO;
  *
  * @author jhon,wilquer,cristianq
  */
+
+/**
+* Clase EstudianteDTO
+* contiene atributos, gets y sets
+* @author Jhon.Salguero Wilquer.Pulido Cristian.Quintero / Unillanos
+* @version 2.0, 2023/02/15
+*/
 public class EstudianteDTO {
 
     private double promedio;

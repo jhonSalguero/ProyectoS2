@@ -13,6 +13,13 @@ import java.awt.event.KeyEvent;
  *
  * @author JHON_SALGUERO
  */
+
+/**
+* Clase InterfazGrafica
+* contiene la logica de la interfaz grafica labels,botones y cajas de entrada texto
+* @author Jhon.Salguero Wilquer.Pulido Cristian.Quintero / Unillanos
+* @version 2.0, 2023/02/15
+*/
 public class InterfazGrafica extends javax.swing.JFrame {
 
     private static EstudianteController estudiante = EstudianteController.getInstance();
@@ -27,6 +34,10 @@ public class InterfazGrafica extends javax.swing.JFrame {
     }
 
     @SuppressWarnings("unchecked")
+    /**
+     * metodos de la funcionalidad interfaz grafica
+     * recibe el codigo por estudiante y llama los metodos por cada funcion de la interfaz grafica
+     */
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
@@ -469,7 +480,7 @@ public class InterfazGrafica extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
     private void consultar6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_consultar6ActionPerformed
         try {
             int codigo = Integer.parseInt(dto2.getText());
