@@ -31,12 +31,16 @@ public class ElementoController {
     
      /**
      * metodo promedioPrecioElementoOracle
-     * 
+     * llama al metodo calcularPromedioElementoOracle que se encuentra en la clase elemento (Objeto puto)
      */
     public double promedioPrecioElementoOracle(int codigo) {
         return elem.calcularPromedioElementoOracle(codigo);
     }
-
+    
+    /**
+     * metodo promedioPrecioElementoSQLServer
+     * llama al metodo promedioPrecioElementoSQLServer que se encuentra en la clase elemento (Objeto puto)
+     */
     public double promedioPrecioElementoSQLServer(int codigo) {
         return elem.calcularPromedioElementoSQLServer(codigo);
     }
