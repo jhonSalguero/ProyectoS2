@@ -7,11 +7,6 @@ package com.mycompany.s2_mvc.Controller;
 import com.mycompany.s2_mvc.modelo.Elementos;
 
 /**
- *
- * @author david
- */
-
-/**
 * Clase controtrolador para el elemento
 * contiene patron singleton y metodos del controlador
 * @author Jhon.Salguero Wilquer.Pulido Cristian.Quintero / Unillanos

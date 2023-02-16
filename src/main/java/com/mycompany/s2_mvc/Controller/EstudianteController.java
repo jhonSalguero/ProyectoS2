@@ -8,9 +8,11 @@ import com.mycompany.s2_mvc.DTO.EstudianteDTO;
 import com.mycompany.s2_mvc.modelo.Estudiante;
 
 /**
- *
- * @author JHON
- */
+* Clase controlador para el estudiante
+* contiene patron singleton y metodos del controlador
+* @author Jhon.Salguero Wilquer.Pulido Cristian.Quintero / Unillanos
+* @version 2.0, 2023/02/15
+*/
 public class EstudianteController {
 
     private Estudiante est;
@@ -27,29 +29,46 @@ public class EstudianteController {
         }
         return estudianteControllerOracle;
     }
-
-    //Funcion promedio estudiante Oracle
+    
+    /**
+     * Funcion promedio estudiante Oracle
+     * llama a la función promedioEstudiante_Oracle que se encuentra en la clase EstudianteOracle
+     */
     public double promedioEstudiante_Oracle(int codigo) {
         return est.calcular_promedio_Oracle(codigo);
     }
-
-    //Procedimiento actualizar correo Oracle
+    
+    
+    /**
+     * Procedimiento actualizar correo Oracle
+     * llama el procedimiento actualizar_Correo que se encuentra en la clase EstudianteOracle
+     */
     public boolean actualizarCorreo_Oracle() {
         return est.actualizar_correo_Oracle();
     }
-
-    //Funcion promedio estudiante SQLServer
+    
+    /**
+     * //Funcion promedio estudiante SQLServer
+     * llama la función promedioEstudiante que se encuentra en la clase EstudianteSQLServer
+     */
     public double promedioEstudiante_SQLServer(int codigo) {
         return est.calcular_promedio_SQLServer(codigo);
 
     }
-
-    //Procedimiento actualizar correo SQLServer
+    
+    /**
+     * Procedimiento actualizar correo SQLServer
+     * llama el procedimiento actualizarCorreo que se encuentra en la clase EstudianteSQLServer
+     */
     public boolean actualizarCorreo_SQLServer() {
         return est.actualizar_correo_SQLServer();
     }
 
     //DTOs
+    /**
+     * Funcion promedioEstudiante_OracleDTO
+     * llama la función promedioEstudianteDTO que se encuentra en la clase EstudianteOracle
+     */
     public EstudianteDTO promedioEstudiante_OracleDTO(int codigo) {
         return est.calcular_promedio_OracleDTO(codigo);
     }
