@@ -207,7 +207,7 @@ public class EstudianteOracleDAO {
             if (rs.next()) {
                 byte[] bytes = rs.getBytes("imagen");
                 if (bytes != null) {
-                    ImageIcon imageIcon = new ImageIcon(bytes);
+                ImageIcon imageIcon = new ImageIcon(bytes);
 
                 JLabel label = new JLabel(imageIcon);
 
