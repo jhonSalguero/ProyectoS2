@@ -150,7 +150,7 @@ public class EstudianteOracleDAO {
                 File saveFile = new File("src/img/" + selectedFile.getName());
                 Files.copy(selectedFile.toPath(), saveFile.toPath());
                 System.out.println("Imagen guardada en la carpeta");
-
+                JOptionPane.showMessageDialog(null, "Imagen guardada en Oracle");
             } else {
                 System.out.println("No se ha seleccionado ninguna imagen.");
             }
