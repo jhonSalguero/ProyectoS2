@@ -1,0 +1,6 @@
+com.mycompany.s2_mvc.Controller
+com.mycompany.s2_mvc.DAO
+com.mycompany.s2_mvc.DTO
+com.mycompany.s2_mvc.Database
+com.mycompany.s2_mvc.View
+com.mycompany.s2_mvc.modelo
