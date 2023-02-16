@@ -6,7 +6,7 @@ package com.mycompany.s2_mvc.DTO;
 
 /**
  *
- * @author JHON_SALGUERO
+ * @author jhon,wilquer,cristianq
  */
 public class EstudianteDTO {
 

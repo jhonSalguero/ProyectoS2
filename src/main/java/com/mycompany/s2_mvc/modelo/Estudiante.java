@@ -24,7 +24,6 @@ public class Estudiante {
     private String telefono;
     private String programa;
     private byte[] imagen;
-    
 
     public double calcular_promedio_Oracle(int codigo) {
         try {
@@ -77,9 +76,9 @@ public class Estudiante {
             return false;
         }
     }
-    
-    public EstudianteDTO buscarEstudiante(int codigo){
-        EstudianteDTO est = new EstudianteDTO();        
+
+    public EstudianteDTO buscarEstudiante(int codigo) {
+        EstudianteDTO est = new EstudianteDTO();
         try {
             est = est_odao.buscarIdEstudianteOracle(codigo);
         } catch (Exception e) {
@@ -87,14 +86,13 @@ public class Estudiante {
         }
         return est;
     }
-    
-    public void guardarImagenOracle(EstudianteDTO estudiante){
+
+    public void guardarImagenOracle(EstudianteDTO estudiante) {
         est_odao.guardarImagenOracle(estudiante);
 
     }
-    
-    public void mostrarImagenOracle(EstudianteDTO estudiante){
+
+    public void mostrarImagenOracle(EstudianteDTO estudiante) {
         est_odao.mostrarImagenOracle(estudiante);
     }
-    
 }

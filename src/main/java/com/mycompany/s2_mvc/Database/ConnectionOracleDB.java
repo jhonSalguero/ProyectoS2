@@ -6,7 +6,7 @@ package com.mycompany.s2_mvc.Database;
 
 /**
  *
- * @author JHON
+ * @author jhon,wilquer,cristianq
  */
 import java.sql.Connection;
 import java.sql.DriverManager;

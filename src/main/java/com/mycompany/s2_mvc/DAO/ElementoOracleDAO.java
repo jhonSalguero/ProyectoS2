@@ -11,7 +11,7 @@ import java.sql.SQLException;
 
 /**
  *
- * @author david
+ * @author jhon,wilquer,cristianq
  */
 public class ElementoOracleDAO {
 

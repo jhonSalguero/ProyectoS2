@@ -65,10 +65,9 @@ public class EstudianteController {
     public void guardarFotoOracle(EstudianteDTO estudiante) {
         est.guardarImagenOracle(estudiante);
     }
-    
-    public void mostrarImagenOracle(EstudianteDTO estudiante){
+
+    public void mostrarImagenOracle(EstudianteDTO estudiante) {
         est.mostrarImagenOracle(estudiante);
-    
+
     }
-   
 }

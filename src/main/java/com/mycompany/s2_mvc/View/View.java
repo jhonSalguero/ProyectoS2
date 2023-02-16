@@ -14,7 +14,7 @@ import javax.swing.JFileChooser;
 
 /**
  *
- * @author JHON
+ * @author jhon,wilquer,cristianq
  */
 public class View {
 
@@ -77,18 +77,18 @@ public class View {
                 System.out.println("Telefono: " + estdto.getTelefono());
                 System.out.println("Programa: " + estdto.getPrograma());
                 System.out.println("Imagen: " + estdto.getImagen());
-                
+
             } else if (opcion == 8) {
                 System.out.println("Ingresa el código del estudiante");
                 int codigo = lectura.nextInt();
-                EstudianteDTO estdto = est.buscarEstudiante_Oracle(codigo);                
+                EstudianteDTO estdto = est.buscarEstudiante_Oracle(codigo);
                 est.guardarFotoOracle(estdto);
-                
+
             } else if (opcion == 9) {
                 System.out.println("Ingresa el código del estudiante");
                 int codigo = lectura.nextInt();
                 EstudianteDTO estdto = est.buscarEstudiante_Oracle(codigo);
-                est.mostrarImagenOracle(estdto);   
+                est.mostrarImagenOracle(estdto);
             }
         }
     }

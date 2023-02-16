@@ -9,7 +9,7 @@ import com.mycompany.s2_mvc.DAO.ElementoSQLServerDAO;
 
 /**
  *
- * @author david
+ * @author jhon,wilquer,cristianq
  */
 public class Elementos {
 
@@ -48,5 +48,4 @@ public class Elementos {
             return 0;
         }
     }
-
 }
