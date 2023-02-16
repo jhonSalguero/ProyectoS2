@@ -13,6 +13,14 @@ import java.sql.SQLException;
  *
  * @author jhon,wilquer,cristianq
  */
+
+
+/**
+* Clase elementoOracleDAO
+* contiene los metodos para llamar la funcion precioElemento en Oracle y SQL Server y patron singleton
+* @author Jhon.Salguero Wilquer.Pulido Cristian.Quintero / Unillanos
+* @version 2.0, 2023/02/15
+*/
 public class ElementoOracleDAO {
 
     private static ConnectionOracleDB oracle_con = ConnectionOracleDB.getInstance();
@@ -31,7 +39,11 @@ public class ElementoOracleDAO {
         }
         return elementoServiceOracle;
     }
-
+    
+    /**
+     * metodo promedioPrecioElemento
+     * metodo promedioPrecioElemento recibe el codigo de elemento para que la funcion en oracle calcule el precio promedio
+     */
     public float promedioPrecioElemento(int codigo) throws SQLException {
         con.createStatement();
         cs = con.prepareCall("{? = call promedio_elemento(?)}");
