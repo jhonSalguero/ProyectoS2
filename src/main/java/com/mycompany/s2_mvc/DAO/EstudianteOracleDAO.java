@@ -37,10 +37,11 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  */
 
 /**
-* Frase corta descriptiva
-* Descripción de la clase
-* @author Nombre Apellido / Empresa
-* @version 0.1, 2004/05/30
+* Clase ElementoOracleDAO
+* contiene patron singleton y metodo de promedioEstudiante, actualizarCorreo, buscarIdEstudiante,
+* Guardarimagen, y mostrar imagen.
+* @author Jhon.Salguero Wilquer.Pulido Cristian.Quintero / Unillanos
+* @version 2.0, 2023/02/15
 */
 public class EstudianteOracleDAO {
     
@@ -63,14 +64,8 @@ public class EstudianteOracleDAO {
 
     
     /**
-     * Frase corta descriptiva Descripción del método. Mención al
-     * uso{@link es.loquesea.$app.util.Otra#unMetodo unMetodo}.
-     *
-     * @param param1 descripción del parámetro.
-     * @return qué devuelve el método.
-     * @exception tipo de excepción que lanza el método y en qué caso
-     * @see paquete.Clase#metodo Código al que se hace referencia
-     * @throws IllegalArgumentException el param1 no tiene el formato deseado
+     * Funcion promedioEstudiante
+     * llama a la función promedioEstudiante que se encuentra en la base de datos
      */
     public double promedioEstudiante(int codigo) throws SQLException {
         con.createStatement();
@@ -82,7 +77,11 @@ public class EstudianteOracleDAO {
         float resultado = cs.getFloat(1);
         return resultado;
     }
-
+    
+    /**
+     * Funcion promedioEstudianteDTO
+     * llama a la función promedioEstudiante que se encuentra en la base de datos
+     */
     public EstudianteDTO promedioEstudianteDTO(int codigo) throws SQLException {
         con.createStatement();
         cs = con.prepareCall("{? = call promedio_estudiante(?)}");
@@ -98,6 +97,10 @@ public class EstudianteOracleDAO {
         return est;
     }
 
+    /**
+     * Funcion actualizarCorreo
+     * llama a la función actualizarCorreo que se encuentra en la base de datos
+     */
     public boolean actualizarCorreo() {
         try {
             con.createStatement();
@@ -109,8 +112,11 @@ public class EstudianteOracleDAO {
             return false;
         }
     }
-
-    //Método encargado de buscar un estudiante en  la base de datos oracle
+    
+    /**
+     * Método buscarEstudianteOracle
+     * Método encargado de buscar un estudiante en  la base de datos oracle
+     */
     public EstudianteDTO buscarIdEstudianteOracle(int idEstudiante) {
         EstudianteDTO estudiante = new EstudianteDTO();
         try {
@@ -138,8 +144,11 @@ public class EstudianteOracleDAO {
         }
         return estudiante;
     }
-
-    //Método encargado de guardar la foto de un estudiante en oracle  
+    
+    /**
+     * Método guardarImagenOracle
+     * Método encargado de guardar la foto de un estudiante en oracle  
+     */
     public void guardarImagenOracle(EstudianteDTO estudiante) {
         PreparedStatement pstmt = null;
 
@@ -179,7 +188,10 @@ public class EstudianteOracleDAO {
         }
     }
 
-    // Metodo para mostrar la imagen almacenada en la base de datos oracle
+    /**
+     * Método guardarImagenOracle
+     * Metodo para mostrar la imagen almacenada en la base de datos oracle
+     */ 
     public void mostrarImagenOracle(EstudianteDTO estudiante) {
         //Connection con = null;
         PreparedStatement pstmt = null;

@@ -11,9 +11,11 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
- *
- * @author jhon,wilquer,cristianq
- */
+* Clase ElementoSQLServerDAO
+* contiene patron singleton y metodos de promedioPrecioElemento
+* @author Jhon.Salguero Wilquer.Pulido Cristian.Quintero / Unillanos
+* @version 2.0, 2023/02/15
+*/
 public class ElementoSQLServerDAO {
 
     private static ConnectionSQLServerDB con_ss = ConnectionSQLServerDB.getInstance();
@@ -32,7 +34,11 @@ public class ElementoSQLServerDAO {
         }
         return elementoServiceSQLServer;
     }
-
+    
+    /**
+     * Funcion promedioPrecioElemento
+     * Se llama a la función promedioPrecioElemento contenida en la base de datos
+     */
     public float promedioPrecioElemento(int codigo) throws SQLException {
 
         con.createStatement();

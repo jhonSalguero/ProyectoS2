@@ -11,9 +11,11 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 /**
- *
- * @author jhon,wilquer,cristianq
- */
+* Clase EstudianteSQLServerDAO
+* contiene patron singleton y metodos de Estudiante
+* @author Jhon.Salguero Wilquer.Pulido Cristian.Quintero / Unillanos
+* @version 2.0, 2023/02/15
+*/
 public class EstudianteSQLServerDAO {
 
     private CallableStatement cs = null;
@@ -33,7 +35,11 @@ public class EstudianteSQLServerDAO {
         }
         return estudianteServiceSQLServer;
     }
-
+    
+    /**
+     * Método promedioEstudiante
+     * llama a la función promedioEstudiante que se encuentra en la base de datos
+     */
     public double promedioEstudiante(int codigo) throws SQLException {
         con.createStatement();
         cs = con.prepareCall("{? = call promedio_estudiante(?)}");
@@ -43,7 +49,11 @@ public class EstudianteSQLServerDAO {
         float resultado = cs.getFloat(1);
         return resultado;
     }
-
+    
+    /**
+     * Metodo promedioEstudianteDTO
+     * llama a la función promedioEstudianteDTO que se encuentra en la base de datos
+     */
     public EstudianteDTO promedioEstudianteDTO(int codigo) throws SQLException {
         con.createStatement();
         cs = con.prepareCall("{? = call promedio_estudiante(?)}");
@@ -57,7 +67,12 @@ public class EstudianteSQLServerDAO {
 
         return est;
     }
-
+    
+    
+    /**
+     * Metodo actualizarCorreo
+     * llama a la función actualizarCorreo que se encuentra en la base de datos
+     */
     public boolean actualizarCorreo() {
         try {
             con.createStatement();

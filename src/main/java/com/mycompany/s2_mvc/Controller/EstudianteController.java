@@ -32,7 +32,7 @@ public class EstudianteController {
     
     /**
      * Funcion promedio estudiante Oracle
-     * llama a la función promedioEstudiante_Oracle que se encuentra en la clase EstudianteOracle
+     * llama a la función promedioEstudiante_Oracle que se encuentra en la clase Estudiante
      */
     public double promedioEstudiante_Oracle(int codigo) {
         return est.calcular_promedio_Oracle(codigo);
@@ -41,7 +41,7 @@ public class EstudianteController {
     
     /**
      * Procedimiento actualizar correo Oracle
-     * llama el procedimiento actualizar_Correo que se encuentra en la clase EstudianteOracle
+     * llama el procedimiento actualizar_Correo que se encuentra en la clase Estudiante
      */
     public boolean actualizarCorreo_Oracle() {
         return est.actualizar_correo_Oracle();
@@ -49,7 +49,7 @@ public class EstudianteController {
     
     /**
      * //Funcion promedio estudiante SQLServer
-     * llama la función promedioEstudiante que se encuentra en la clase EstudianteSQLServer
+     * llama la función promedioEstudiante que se encuentra en la clase Estudiante
      */
     public double promedioEstudiante_SQLServer(int codigo) {
         return est.calcular_promedio_SQLServer(codigo);
@@ -58,7 +58,7 @@ public class EstudianteController {
     
     /**
      * Procedimiento actualizar correo SQLServer
-     * llama el procedimiento actualizarCorreo que se encuentra en la clase EstudianteSQLServer
+     * llama el procedimiento actualizarCorreo que se encuentra en la clase Estudiante
      */
     public boolean actualizarCorreo_SQLServer() {
         return est.actualizar_correo_SQLServer();
@@ -67,24 +67,40 @@ public class EstudianteController {
     //DTOs
     /**
      * Funcion promedioEstudiante_OracleDTO
-     * llama la función promedioEstudianteDTO que se encuentra en la clase EstudianteOracle
+     * llama la función promedioEstudianteDTO que se encuentra en la clase Estudiante
      */
     public EstudianteDTO promedioEstudiante_OracleDTO(int codigo) {
         return est.calcular_promedio_OracleDTO(codigo);
     }
-
+    
+    /**
+     * Funcion promedioEstudiante_SQLServerDTO
+     * llama la función promedioEstudianteDTO que se encuentra en la clase Estudiante
+     */
     public EstudianteDTO promedioEstudiante_SQLServerDTO(int codigo) {
         return est.calcular_promedio_SQLServerDTO(codigo);
     }
-
+    
+    /**
+     * Funcion buscarEstudiante
+     * llama la función promedioEstudianteDTO que se encuentra en la clase Estudiante
+     */
     public EstudianteDTO buscarEstudiante_Oracle(int codigo) {
         return est.buscarEstudiante(codigo);
     }
-
+    
+     /**
+     * Funcion guardarFoto
+     * llama la función guardarFotoOracle que se encuentra en la clase Estudiante
+     */
     public void guardarFotoOracle(EstudianteDTO estudiante) {
         est.guardarImagenOracle(estudiante);
     }
-
+    
+    /**
+     * Funcion mostrarImagen
+     * llama la función mostrarImagenOracle que se encuentra en la clase Estudiante
+     */
     public void mostrarImagenOracle(EstudianteDTO estudiante) {
         est.mostrarImagenOracle(estudiante);
 
