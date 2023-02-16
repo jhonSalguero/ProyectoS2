@@ -35,11 +35,18 @@ import javax.swing.filechooser.FileNameExtensionFilter;
  *
  * @author wilquer,jhon,cristianq
  */
-public class EstudianteOracleDAO {
 
+/**
+* Frase corta descriptiva
+* Descripción de la clase
+* @author Nombre Apellido / Empresa
+* @version 0.1, 2004/05/30
+*/
+public class EstudianteOracleDAO {
+    
     private static ConnectionOracleDB o_con = ConnectionOracleDB.getInstance();
     private static Connection con = o_con.getConnection();
-
+    
     private CallableStatement cs = null;
 
     private static EstudianteOracleDAO estudianteServiceOracle;
@@ -54,6 +61,17 @@ public class EstudianteOracleDAO {
         return estudianteServiceOracle;
     }
 
+    
+    /**
+     * Frase corta descriptiva Descripción del método. Mención al
+     * uso{@link es.loquesea.$app.util.Otra#unMetodo unMetodo}.
+     *
+     * @param param1 descripción del parámetro.
+     * @return qué devuelve el método.
+     * @exception tipo de excepción que lanza el método y en qué caso
+     * @see paquete.Clase#metodo Código al que se hace referencia
+     * @throws IllegalArgumentException el param1 no tiene el formato deseado
+     */
     public double promedioEstudiante(int codigo) throws SQLException {
         con.createStatement();
         cs = con.prepareCall("{? = call promedio_estudiante(?)}");

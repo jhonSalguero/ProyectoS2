@@ -10,8 +10,15 @@ import com.mycompany.s2_mvc.modelo.Elementos;
  *
  * @author david
  */
-public class ElementoController {
 
+/**
+* Clase controtrolador para el elemento
+* contiene patron singleton y metodos del controlador
+* @author Jhon.Salguero Wilquer.Pulido Cristian.Quintero / Unillanos
+* @version 2.0, 2023/02/15
+*/
+public class ElementoController {
+    
     private Elementos elem;
 
     private static ElementoController elementoControllerOracle;
@@ -26,7 +33,11 @@ public class ElementoController {
         }
         return elementoControllerOracle;
     }
-
+    
+     /**
+     * metodo promedioPrecioElementoOracle
+     * 
+     */
     public double promedioPrecioElementoOracle(int codigo) {
         return elem.calcularPromedioElementoOracle(codigo);
     }
